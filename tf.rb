@@ -5,25 +5,25 @@
 class Tf < Formula
   desc "Terraform version wrapper"
   homepage "https://github.com/jacobwgillespie/tf"
-  version "0.0.4"
+  version "0.0.5"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.4/tf_0.0.4_Darwin_x86_64.tar.gz"
-    sha256 "5004a04da477090aa7aa03039687fa49fb04261f6a731c9c09b8a1939c63bb21"
+    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.5/tf_0.0.5_Darwin_x86_64.tar.gz"
+    sha256 "794776640c767edd4c6580ab9bed383f4f48f16269203e805ea062b8ee9c279d"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.4/tf_0.0.4_Darwin_arm64.tar.gz"
-    sha256 "fa7fde8fc5f5f6c6b8e6832acc8e42a17f768fc68dc75edb8167c1886a0885e2"
+    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.5/tf_0.0.5_Darwin_arm64.tar.gz"
+    sha256 "d7ef28fbf550d3165e37f337e6b3697b1579f9e69139aac63d2bc06d9688db2a"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.4/tf_0.0.4_Linux_x86_64.tar.gz"
-    sha256 "7a532b2b141d219177d6059cd4482ce403810453def8cc79288c00e5f6ae1540"
+    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.5/tf_0.0.5_Linux_x86_64.tar.gz"
+    sha256 "6335968c94eeb35091784c3755c86cfaad77b099832117649ea6c099553e0572"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.4/tf_0.0.4_Linux_arm64.tar.gz"
-    sha256 "095844abe4739f08fe61f723610bfde606c596f9e67b1491353f2e00ebfc2a86"
+    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.5/tf_0.0.5_Linux_arm64.tar.gz"
+    sha256 "4bb7adf5b6e231ddfb09537033dfb6d9da92d6a456fd39fd565ee64abf7fd6d4"
   end
 
   def install
