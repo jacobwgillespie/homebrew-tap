@@ -5,25 +5,30 @@
 class Tf < Formula
   desc "Terraform version wrapper"
   homepage "https://github.com/jacobwgillespie/tf"
-  version "0.0.5"
+  version "0.1.0"
   license "MIT"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.5/tf_0.0.5_Darwin_x86_64.tar.gz"
-    sha256 "794776640c767edd4c6580ab9bed383f4f48f16269203e805ea062b8ee9c279d"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.0/tf_0.1.0_Darwin_x86_64.tar.gz"
+      sha256 "e31eed9fb4fa1114f7efae0ccecc0db7c81a08e0ab54f82cd9d0419ec26a0278"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.0/tf_0.1.0_Darwin_arm64.tar.gz"
+      sha256 "6ad3a9c50bb07652d4240d7cf8bea3b09af4164a731d24d22a7b3d82dcad1d2f"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.5/tf_0.0.5_Darwin_arm64.tar.gz"
-    sha256 "d7ef28fbf550d3165e37f337e6b3697b1579f9e69139aac63d2bc06d9688db2a"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.5/tf_0.0.5_Linux_x86_64.tar.gz"
-    sha256 "6335968c94eeb35091784c3755c86cfaad77b099832117649ea6c099553e0572"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/jacobwgillespie/tf/releases/download/v0.0.5/tf_0.0.5_Linux_arm64.tar.gz"
-    sha256 "4bb7adf5b6e231ddfb09537033dfb6d9da92d6a456fd39fd565ee64abf7fd6d4"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.0/tf_0.1.0_Linux_x86_64.tar.gz"
+      sha256 "23003b3425f2f494212d5caca36f5497449c90117d0cb160f121ca12b8779592"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.0/tf_0.1.0_Linux_arm64.tar.gz"
+      sha256 "640bc94c1ce1b17eb7dea80601f0e16c0bdd8438fd6cc209fe6c08c5e93dd025"
+    end
   end
 
   def install
