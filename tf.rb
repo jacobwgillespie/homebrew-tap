@@ -5,29 +5,29 @@
 class Tf < Formula
   desc "Terraform version wrapper"
   homepage "https://github.com/jacobwgillespie/tf"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.0/tf_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "e31eed9fb4fa1114f7efae0ccecc0db7c81a08e0ab54f82cd9d0419ec26a0278"
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.1/tf_0.1.1_Darwin_x86_64.tar.gz"
+      sha256 "76245087b46e2acd51704725adb98148f57e7d17caee03d076f7bcae22f3db85"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.0/tf_0.1.0_Darwin_arm64.tar.gz"
-      sha256 "6ad3a9c50bb07652d4240d7cf8bea3b09af4164a731d24d22a7b3d82dcad1d2f"
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.1/tf_0.1.1_Darwin_arm64.tar.gz"
+      sha256 "59d3a887fccb4c634af009804372cd0f9b88429dae4fce8b4438cb9c58dd5487"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.0/tf_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "23003b3425f2f494212d5caca36f5497449c90117d0cb160f121ca12b8779592"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.0/tf_0.1.0_Linux_arm64.tar.gz"
-      sha256 "640bc94c1ce1b17eb7dea80601f0e16c0bdd8438fd6cc209fe6c08c5e93dd025"
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.1/tf_0.1.1_Linux_arm64.tar.gz"
+      sha256 "546a6903654d8cf6b34e3860eb061d9e6c676f627fd5705949a1776fa6ab6ed8"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.1/tf_0.1.1_Linux_x86_64.tar.gz"
+      sha256 "1782ff7a490704345fca78156298158018eba9f82aa36bac32f2429573d3a7c7"
     end
   end
 
