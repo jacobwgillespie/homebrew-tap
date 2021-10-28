@@ -5,33 +5,44 @@
 class GitSync < Formula
   desc "Git branch sync utility"
   homepage "https://github.com/jacobwgillespie/git-sync"
-  version "0.0.1"
+  version "0.1.0"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/git-sync/releases/download/v0.0.1/git-sync_0.0.1_Darwin_x86_64.tar.gz"
-      sha256 "471c5c24b011796f001f13fe3f74dd5d73bafc958ea9faac0a9851ae4b043a6b"
+      url "https://github.com/jacobwgillespie/git-sync/releases/download/v0.1.0/git-sync_0.1.0_Darwin_x86_64.tar.gz"
+      sha256 "e30c4e3a3774e3fb57ef64dc272d0eb85e72151c1285f2f8dd0bbeb79699228b"
+
+      def install
+        bin.install "git-sync"
+      end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/jacobwgillespie/git-sync/releases/download/v0.0.1/git-sync_0.0.1_Darwin_arm64.tar.gz"
-      sha256 "5a60728f64d0825750f51d753a530727c938bcc9b884f2d9ca21a4d9f6bdba70"
+      url "https://github.com/jacobwgillespie/git-sync/releases/download/v0.1.0/git-sync_0.1.0_Darwin_arm64.tar.gz"
+      sha256 "8a48a352914311c9a402b1d8f7e9a267bcdbac27ee27146c7e3ea549b879a86f"
+
+      def install
+        bin.install "git-sync"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/git-sync/releases/download/v0.0.1/git-sync_0.0.1_Linux_x86_64.tar.gz"
-      sha256 "ccbaca2774e4f9b925a6b0f338ad92f6cfdcfd0812bbd6e5d82348fc08cdf6e1"
+      url "https://github.com/jacobwgillespie/git-sync/releases/download/v0.1.0/git-sync_0.1.0_Linux_x86_64.tar.gz"
+      sha256 "c475e746ec900710dd620bcdf604b736c92a66468da8da254de22c89175c9fdf"
+
+      def install
+        bin.install "git-sync"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jacobwgillespie/git-sync/releases/download/v0.0.1/git-sync_0.0.1_Linux_arm64.tar.gz"
-      sha256 "a4cebed7d05ddef9af95e11e35006fdc73268c1dffa07cf202d63591973a3d03"
-    end
-  end
+      url "https://github.com/jacobwgillespie/git-sync/releases/download/v0.1.0/git-sync_0.1.0_Linux_arm64.tar.gz"
+      sha256 "ba5a1b67d572dc6d47367485388a5296b1cf3c2303e3d0fc3c0da7cfb56eb888"
 
-  def install
-    bin.install "git-sync"
+      def install
+        bin.install "git-sync"
+      end
+    end
   end
 end
