@@ -5,36 +5,47 @@
 class TfShim < Formula
   desc "Terraform version wrapper"
   homepage "https://github.com/jacobwgillespie/tf"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.1/tf_0.1.1_Darwin_x86_64.tar.gz"
-      sha256 "76245087b46e2acd51704725adb98148f57e7d17caee03d076f7bcae22f3db85"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.1/tf_0.1.1_Darwin_arm64.tar.gz"
-      sha256 "59d3a887fccb4c634af009804372cd0f9b88429dae4fce8b4438cb9c58dd5487"
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.2/tf_0.1.2_Darwin_arm64.tar.gz"
+      sha256 "33fc1377c923a7efb8eda329cca27fd4f21b3ed76f72b46e4fd442d7a16f1945"
+
+      def install
+        bin.install "tf" => "terraform"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.2/tf_0.1.2_Darwin_x86_64.tar.gz"
+      sha256 "a8ded9c5311203cfd8d9cbe2d9a9ec34c0e847fa7d9a84b6fcd0d43e4ec139bd"
+
+      def install
+        bin.install "tf" => "terraform"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.1/tf_0.1.1_Linux_arm64.tar.gz"
-      sha256 "546a6903654d8cf6b34e3860eb061d9e6c676f627fd5705949a1776fa6ab6ed8"
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.2/tf_0.1.2_Linux_arm64.tar.gz"
+      sha256 "36ad7057c8459f7ec09814ce72c9960a05e3ab8ce9400c57d9fd4342a8345590"
+
+      def install
+        bin.install "tf" => "terraform"
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.1/tf_0.1.1_Linux_x86_64.tar.gz"
-      sha256 "1782ff7a490704345fca78156298158018eba9f82aa36bac32f2429573d3a7c7"
+      url "https://github.com/jacobwgillespie/tf/releases/download/v0.1.2/tf_0.1.2_Linux_x86_64.tar.gz"
+      sha256 "2d811b56ce8041f66503659ddb143dc3164304419e844a185612293543cfee24"
+
+      def install
+        bin.install "tf" => "terraform"
+      end
     end
   end
 
   conflicts_with "terraform"
   conflicts_with "tfenv"
-
-  def install
-    bin.install "tf" => "terraform"
-  end
 end
