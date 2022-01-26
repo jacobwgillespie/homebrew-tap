@@ -5,21 +5,21 @@
 class KeyLight < Formula
   desc "CLI for Elgato Key Lights"
   homepage "https://github.com/jacobwgillespie/key-light"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/jacobwgillespie/key-light/releases/download/v0.1.0/key-light_0.1.0_Darwin_arm64.tar.gz"
-      sha256 "0d61e2de3db4bf0aad916d1f41ef54f905141fd174011b3e8632e70656ecae5f"
+    if Hardware::CPU.intel?
+      url "https://github.com/jacobwgillespie/key-light/releases/download/v0.1.1/key-light_0.1.1_Darwin_x86_64.tar.gz"
+      sha256 "1caa50ebd7a4adf5b29c7b7907a017893ffbcc4e30479b829f8e008448a4dc91"
 
       def install
         bin.install "key-light"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/key-light/releases/download/v0.1.0/key-light_0.1.0_Darwin_x86_64.tar.gz"
-      sha256 "c3a52fedebc4e00052e386bd36be835e68b6eb256ec21a51d6a3d4d6c747a4fa"
+    if Hardware::CPU.arm?
+      url "https://github.com/jacobwgillespie/key-light/releases/download/v0.1.1/key-light_0.1.1_Darwin_arm64.tar.gz"
+      sha256 "db6a8caeb14fd124706ff8696cd0901f3e6c55d73a1010f2a83a9c598f4fa691"
 
       def install
         bin.install "key-light"
@@ -29,16 +29,16 @@ class KeyLight < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jacobwgillespie/key-light/releases/download/v0.1.0/key-light_0.1.0_Linux_arm64.tar.gz"
-      sha256 "8067d7acf67ba7e4b43e7e703f8bb0f128cc19bb3162a849f95271290bedabd0"
+      url "https://github.com/jacobwgillespie/key-light/releases/download/v0.1.1/key-light_0.1.1_Linux_arm64.tar.gz"
+      sha256 "f2257a27818f24bf583c5fd36097719a70c200b124dfe9bd0aaa6c248c7b7217"
 
       def install
         bin.install "key-light"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/key-light/releases/download/v0.1.0/key-light_0.1.0_Linux_x86_64.tar.gz"
-      sha256 "fcbb0db1a127cab4979470ca22aae872072047ca9d2d7c62e9510272d83e1eb6"
+      url "https://github.com/jacobwgillespie/key-light/releases/download/v0.1.1/key-light_0.1.1_Linux_x86_64.tar.gz"
+      sha256 "aeca3cb1511d8def998890abb8a3412b21e799570bc7a3007e092253b0b3590d"
 
       def install
         bin.install "key-light"
