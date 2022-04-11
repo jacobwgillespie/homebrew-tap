@@ -5,13 +5,13 @@
 class Run < Formula
   desc "Run is a tool for running package.json scripts"
   homepage "https://github.com/jacobwgillespie/run"
-  version "0.1.1"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.1.1/run_0.1.1_Darwin_arm64.tar.gz"
-      sha256 "9667dead06bd3b235a1daa316a40b2f87766b54ef0b3b5fd1dba129cb52cf9da"
+    if Hardware::CPU.intel?
+      url "https://github.com/jacobwgillespie/run/releases/download/v0.2.0/run_0.2.0_Darwin_x86_64.tar.gz"
+      sha256 "373048475882a47d0e351aac8e60ff37c0b7c888700b0dd7bb7a2bf4e784c7a5"
 
       def install
         bin.install "bin/run"
@@ -23,9 +23,9 @@ class Run < Formula
         (zsh_completion/"_run").write zsh_comp
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.1.1/run_0.1.1_Darwin_x86_64.tar.gz"
-      sha256 "4eedc6528358c6626dae238cf105f71a07d9e86ea7a33ef839e2222dc64bdf89"
+    if Hardware::CPU.arm?
+      url "https://github.com/jacobwgillespie/run/releases/download/v0.2.0/run_0.2.0_Darwin_arm64.tar.gz"
+      sha256 "9ca37b128f612d9ce25ae7832593857a6156aa1afe2693a67cf081954b787522"
 
       def install
         bin.install "bin/run"
@@ -40,9 +40,9 @@ class Run < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.1.1/run_0.1.1_Linux_x86_64.tar.gz"
-      sha256 "1cfc7602106d22d1cc92fa3160be0d7cc9626c7bc59cb86aa9caec5d71f9aea4"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/jacobwgillespie/run/releases/download/v0.2.0/run_0.2.0_Linux_arm64.tar.gz"
+      sha256 "6208ceb691708e35ba044b46b14952083512feded99a3c007a0c5848955f1727"
 
       def install
         bin.install "bin/run"
@@ -54,9 +54,9 @@ class Run < Formula
         (zsh_completion/"_run").write zsh_comp
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.1.1/run_0.1.1_Linux_arm64.tar.gz"
-      sha256 "31fc7793099e42d43b14442fb2dbad74b19109981880fdde428eba97f54d781e"
+    if Hardware::CPU.intel?
+      url "https://github.com/jacobwgillespie/run/releases/download/v0.2.0/run_0.2.0_Linux_x86_64.tar.gz"
+      sha256 "eace9ccaa8708602d1f8b5293d7978475173fc356e652828abcfe6b273b58e18"
 
       def install
         bin.install "bin/run"
