@@ -5,13 +5,13 @@
 class Run < Formula
   desc "Run is a tool for running package.json scripts"
   homepage "https://github.com/jacobwgillespie/run"
-  version "0.3.1"
+  version "0.3.2"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.1/run_0.3.1_Darwin_x86_64.tar.gz"
-      sha256 "b668a326bd6d6f5cedcc3d5be9761ba791f185ca0cbaf448ccfbf2802527ea88"
+    if Hardware::CPU.arm?
+      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.2/run_0.3.2_Darwin_arm64.tar.gz"
+      sha256 "99ecf376e5074fc3d32dda5de350d7f03a58cd319ac6af4443a014ce2879d781"
 
       def install
         bin.install "bin/run"
@@ -23,9 +23,9 @@ class Run < Formula
         (zsh_completion/"_run").write zsh_comp
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.1/run_0.3.1_Darwin_arm64.tar.gz"
-      sha256 "6541b867dd08bce4f32e09d462d36cc3dc709510455d88ca7c545556769bda61"
+    if Hardware::CPU.intel?
+      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.2/run_0.3.2_Darwin_x86_64.tar.gz"
+      sha256 "24845b335274e3196c8d3dc4569056e854d4d58940ab88596bf975dbd2ec4a9f"
 
       def install
         bin.install "bin/run"
@@ -41,8 +41,8 @@ class Run < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.1/run_0.3.1_Linux_arm64.tar.gz"
-      sha256 "816be80d3374c06b208112c24a7efd8fef3142e01d96ade57ba79b36460a88a0"
+      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.2/run_0.3.2_Linux_arm64.tar.gz"
+      sha256 "513630870f7e81ca19b7071471b811d7ace472ba3705a6aa51e791e4b6ff284f"
 
       def install
         bin.install "bin/run"
@@ -55,8 +55,8 @@ class Run < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.1/run_0.3.1_Linux_x86_64.tar.gz"
-      sha256 "ec7550ab58695838184e4e34a16fc326056bb11cfe8882882510741f256c3615"
+      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.2/run_0.3.2_Linux_x86_64.tar.gz"
+      sha256 "33fabf0a5dc033c76f3aa754468788686ab646a56e64190fed91db2a9b2fb7cc"
 
       def install
         bin.install "bin/run"
