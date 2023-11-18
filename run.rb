@@ -5,13 +5,13 @@
 class Run < Formula
   desc "Run is a tool for running package.json scripts"
   homepage "https://github.com/jacobwgillespie/run"
-  version "0.3.2"
+  version "1.0.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.2/run_0.3.2_Darwin_arm64.tar.gz"
-      sha256 "99ecf376e5074fc3d32dda5de350d7f03a58cd319ac6af4443a014ce2879d781"
+      url "https://github.com/jacobwgillespie/run/releases/download/v1.0.0/run_1.0.0_darwin_arm64.tar.gz"
+      sha256 "25641a32942136238c9cfb13ed7789d6d0247f9162e691b6022254c9f51584dc"
 
       def install
         bin.install "bin/run"
@@ -24,8 +24,8 @@ class Run < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.2/run_0.3.2_Darwin_x86_64.tar.gz"
-      sha256 "24845b335274e3196c8d3dc4569056e854d4d58940ab88596bf975dbd2ec4a9f"
+      url "https://github.com/jacobwgillespie/run/releases/download/v1.0.0/run_1.0.0_darwin_amd64.tar.gz"
+      sha256 "9c89eafdf3516a08287b555bb0c4424a59e55080a5ea29eec9de0c8ca0bee8fa"
 
       def install
         bin.install "bin/run"
@@ -41,8 +41,8 @@ class Run < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.2/run_0.3.2_Linux_arm64.tar.gz"
-      sha256 "513630870f7e81ca19b7071471b811d7ace472ba3705a6aa51e791e4b6ff284f"
+      url "https://github.com/jacobwgillespie/run/releases/download/v1.0.0/run_1.0.0_linux_arm64.tar.gz"
+      sha256 "c1f6ab8061cdb51b3c05786aec6fd3ef5cf3f74eb94fc8c716f0b466e7a45c2a"
 
       def install
         bin.install "bin/run"
@@ -55,8 +55,8 @@ class Run < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/jacobwgillespie/run/releases/download/v0.3.2/run_0.3.2_Linux_x86_64.tar.gz"
-      sha256 "33fabf0a5dc033c76f3aa754468788686ab646a56e64190fed91db2a9b2fb7cc"
+      url "https://github.com/jacobwgillespie/run/releases/download/v1.0.0/run_1.0.0_linux_amd64.tar.gz"
+      sha256 "b16c2472a7452842d52ef9a149d8726170b285be2870dc9dd40d4810e02f123c"
 
       def install
         bin.install "bin/run"
