@@ -1,9 +1,9 @@
 cask "slack-inbox" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.2.0"
-  sha256 arm:   "39cbac8a32be00631d3129bdbb4c3516095b08bbe5aba65a4870e882ba84dc68",
-         intel: "474840efb78748241f8f0e0cca50b3dda31e5b6990dcd01080c1dbdebb189645"
+  version "0.3.0"
+  sha256 arm:   "ab3a2b1b954eb8926f2e9c6699f65ccbc1d619a7e80a39275145f26431dbfc65",
+         intel: "c81bb2a2e954e5da0784c7185e3269fc244f0a8fb1b822a5abdcfea68037ab49"
 
   url "https://github.com/jacobwgillespie/slack-inbox/releases/download/v#{version}/Slack-Inbox-#{version}-#{arch}.dmg"
   name "Slack Inbox"
